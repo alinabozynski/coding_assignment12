@@ -1,4 +1,7 @@
 # Coding Assignment12
+## Requirements
+* Node.js
+* npm
 
 ## To run this application on port 8083
 ### Run with Storybook
