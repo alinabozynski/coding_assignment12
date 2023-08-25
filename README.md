@@ -1,21 +1,43 @@
 # Coding Assignment12
 
 ## To run this application on port 8083
-Fork the [GitHub repository](https://github.com/bozzywozzy/coding_assignment12) of this application.\
-Ensure all project dependencies are installed.\
-To run the app on Localhost:
-### `npm run storybook`
-Or:\
-To run from a Docker container, navigate to the root directory of this project in a terminal.\
-To create a Docker image, run:
-### `docker build -t <desired_image_name> .`
-Then, to run the image as a container:
-### `docker run --name <desired_container_name> -it -p 8083:80 --rm <image_name>`
+### Run with Storybook
+Clone this repository and change into it's root directory.\
+If not all files cloned, execute the following:
+1. Set git flag with `git config core.protectNTFS false`.
+Git is susceptible to NTFS-related attacks when:
+* Running Git in the WSL
+* Working directly on Windows drives
+* Running Git on macOS and working on smb://-mounted network shares
+3. Run `git reset`
+4. Run `git checkout`
+5. Run `git restore ./`
+
+Ensure all project dependencies are installed with `npm install`.\
+
+To run the app on Localhost: `npm run storybook`.\
+If you receive the error, 'Error: error:0308010C:digital envelope routines::unsupported' after the above command:
+* Unix: run `export NODE_OPTIONS=--openssl-legacy-provider`
+* Windows command prompt: `set NODE_OPTIONS=--openssl-legacy-provider`
+* Powershell: `$env:NODE_OPTIONS = "--openssl-legacy-provider"`
+If the above doesn't work, try to use the current LTS version from [Node.js](https://nodejs.org/en/download/releases).
+
+### Run from Docker container 
+Clone repository with directions above and navigate to the root directory.\
+Download Docker [here](https://www.docker.com/) and start it up to ensure the Docker daemon is running.\
+To create a Docker image, run: `docker build -t <desired_image_name> .`
+Then, to run the image as a container: `docker run --name <desired_container_name> -it -p 8083:80 --rm <image_name>`
 Now open localhost:8083 in a browser!
 
-## Pull and run the application image from my Hub
-### `docker pull abozynski/bozynski_alina_coding_assignment12`
-### `docker run --name <desired_container_name> -it -p 8083:80 --rm abozynski/bozynski_alina_coding_assignment12`
+### Pull and run the application image from my Hub
+Download Docker [here](https://www.docker.com/) and start it up to ensure the Docker daemon is running.\
+```
+docker pull abozynski/bozynski_alina_coding_assignment12
+```
+```
+docker run --name <desired_container_name> -it -p 8083:80 --rm abozynski/bozynski_alina_coding_assignment12
+```
+Now open localhost:8083 in a browser!
 
 ## Available Scripts
 
