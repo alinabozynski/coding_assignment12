@@ -1,4 +1,4 @@
-# Coding Assignment12
+# React Component Library
 ## Requirements
 * Node.js
 * npm
