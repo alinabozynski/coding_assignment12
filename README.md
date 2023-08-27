@@ -6,7 +6,7 @@
 ## To run this application on port 8083
 ### Run with Storybook
 Clone this repository and change into it's root directory.\
-If you are running this on Windows, there may be workarounds needed. To avoid these, run in WSL.
+If you are running this on Windows, there may be workarounds needed (below), as this was made in WSL.\
 If not all files cloned (caused by file with names containing ':' character), execute the following:
 1. Set git flag with `git config core.protectNTFS false`.
 Git is susceptible to NTFS-related attacks when:
